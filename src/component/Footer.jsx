@@ -154,6 +154,9 @@ const Footer = () => {
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
+                    {/* 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 */}
+                    git remote set-url origin
+                    https://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@github.com/Amanhost/aman_portfolio.git
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
