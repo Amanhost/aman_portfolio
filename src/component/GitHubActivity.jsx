@@ -1,4 +1,6 @@
 import React from "react";
+import { Row } from "react-bootstrap";
+import GitHubCalendar from "react-github-calendar";
 
 const GitHubActivity = () => {
   return (
@@ -60,7 +62,7 @@ const GitHubActivity = () => {
               </p>
             </div>
             <a
-              href="#"
+              href="https://github.com/Amanhost"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-emerald-500 text-white hover:bg-emerald-600 transition-colors duration-300"
@@ -82,6 +84,18 @@ const GitHubActivity = () => {
             </a>
           </div>
         </div>
+        {/* <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          <h1 className="project-heading" style={{ paddingBottom: "20px" }}>
+            Days I <strong className="purple">Code</strong>
+          </h1>
+          <GitHubCalendar
+            username="Amanhost"
+            blockSize={15}
+            blockMargin={5}
+            color="#c084f5"
+            fontSize={16}
+          />
+        </Row> */}
       </div>
     </section>
   );

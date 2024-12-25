@@ -4,29 +4,25 @@ import pdf from "../../src/Assets/Image/AmanPrakashResume.pdf";
 const WorkExperience = () => {
   const experiences = [
     {
-      time: "2022 - Present",
-      role: "Senior Full Stack Developer",
-      company: "Tech Innovation Labs",
+      time: "01/2024- Present ",
+      role: "Software Engineer",
+      company: "Uvation India Pvt Ltd. (Delhi)",
       details: [
-        "Led development of enterprise-level applications using React and Node.js",
-        "Implemented microservices architecture improving scalability by 200%",
-        "Mentored junior developers and conducted code reviews",
+        "Leading USP Project with full ownership Uvation Service PlatformmWorked on RBAC Veeam Backup service Integrated Different service, local system backup to install an agent and discovered a computer Created a backup job of different workstations Worked on different Backup policies",
       ],
     },
     {
-      time: "2020 - 2022",
-      role: "Full Stack Developer",
-      company: "Digital Solutions Co.",
+      time: "01/2022 - 01/2024 ",
+      role: "Associate Software Engineer 3",
+      company: "SYNORIQ R&D Pvt Ltd. (Jaipur)",
       details: [
-        "Developed and maintained multiple client projects using MERN stack",
-        "Reduced loading time by 60% through optimization techniques",
-        "Implemented CI/CD pipelines using GitHub Actions",
+        "Responsible for complete ownership for multiple react projects Implementation of responsive web pages and optimized code with less coding Contributed to development of 3 NBFC and 1 Banking software using React JS, Redux, and Java, JavaScript Participated in development usable testing every 2 weeks",
       ],
     },
     {
-      time: "2018 - 2020",
-      role: "Frontend Developer",
-      company: "WebTech Startups",
+      time: "05/2021- 12/2021 ",
+      role: "Software Developer Intern",
+      company: "SOFTPRO INDIA COMPUTER TECHNOLOGY Pvt Ltd. (Lucknow)",
       details: [
         "Built responsive web applications using React and Vue.js",
         "Improved user engagement by 40% through UI/UX enhancements",

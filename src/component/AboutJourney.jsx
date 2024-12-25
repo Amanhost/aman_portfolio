@@ -1,11 +1,34 @@
 import React from "react";
 
 const AboutJourney = () => {
+  const highlights = [
+    {
+      title: "Passion for Problem Solving",
+      description:
+        "I thrive on tackling complex challenges and transforming them into elegant solutions that make a real impact.",
+    },
+    {
+      title: "Continuous Learning",
+      description:
+        "Technology evolves rapidly, and I'm committed to staying at the forefront of innovation through continuous learning and experimentation.",
+    },
+    {
+      title: "User-Centric Approach",
+      description:
+        "I believe in creating solutions that not only solve problems but also provide exceptional user experiences.",
+    },
+  ];
+
+  const stats = [
+    { label: "Years Experience", value: "3+" },
+    { label: "Projects Completed", value: "25+" },
+    { label: "Happy Clients", value: "18+" },
+  ];
+
   return (
     <section id="about_journey" className="py-24 bg-neutral-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
           <div className="relative">
             <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-neutral-800">
               <img
@@ -19,7 +42,6 @@ const AboutJourney = () => {
             <div className="absolute -top-6 -left-6 w-48 h-48 bg-emerald-500/20 rounded-full blur-2xl"></div>
           </div>
 
-          {/* Text Section */}
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -33,59 +55,32 @@ const AboutJourney = () => {
             </div>
 
             <div className="space-y-6">
-              {/* Highlighted Points */}
-              <div className="relative pl-8 border-l border-neutral-800">
-                <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Passion for Problem Solving
-                </h3>
-                <p className="text-neutral-400">
-                  I thrive on tackling complex challenges and transforming them
-                  into elegant solutions that make a real impact.
-                </p>
-              </div>
-
-              <div className="relative pl-8 border-l border-neutral-800">
-                <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Continuous Learning
-                </h3>
-                <p className="text-neutral-400">
-                  Technology evolves rapidly, and I'm committed to staying at
-                  the forefront of innovation through continuous learning and
-                  experimentation.
-                </p>
-              </div>
-
-              <div className="relative pl-8 border-l border-neutral-800">
-                <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  User-Centric Approach
-                </h3>
-                <p className="text-neutral-400">
-                  I believe in creating solutions that not only solve problems
-                  but also provide exceptional user experiences.
-                </p>
-              </div>
+              {highlights.map(({ title, description }, index) => (
+                <div
+                  key={index}
+                  className="relative pl-8 border-l border-neutral-800"
+                >
+                  <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-emerald-500"></div>
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {title}
+                  </h3>
+                  <p className="text-neutral-400">{description}</p>
+                </div>
+              ))}
             </div>
 
-            {/* Stats Section */}
             <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900">
-                <span className="text-emerald-500">5+</span>
-                <span className="text-neutral-400">Years Experience</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900">
-                <span className="text-emerald-500">50+</span>
-                <span className="text-neutral-400">Projects Completed</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900">
-                <span className="text-emerald-500">30+</span>
-                <span className="text-neutral-400">Happy Clients</span>
-              </div>
+              {stats.map(({ label, value }, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900"
+                >
+                  <span className="text-emerald-500">{value}</span>
+                  <span className="text-neutral-400">{label}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Call to Action */}
             <div>
               <a
                 href="#contact_connect"
