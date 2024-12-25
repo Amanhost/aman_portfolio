@@ -10,7 +10,13 @@ import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
 import avtar from "../../src/Assets/Image/amanimg.jpg";
-import Resume from "./Resume";
+import Techstack from "./Techstack";
+
+import { Col, Row } from "react-bootstrap";
+import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
+import { FaJava, FaNode, FaReact } from "react-icons/fa";
+import { SiJavascript, SiRedux, SiSalesforce, SiVeeam } from "react-icons/si";
+import { TbBrandCarbon, TbBrandNextjs } from "react-icons/tb";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +39,7 @@ const Nav = () => {
         { name: "React.js", proficiency: 95 },
         { name: "JavaScript", proficiency: 95 },
         { name: "Redux", proficiency: 90 },
-        { name: "Tailwind CSS", proficiency: 98 },
+        // { name: "Tailwind CSS", proficiency: 98 },
       ],
     },
     {
@@ -41,31 +47,22 @@ const Nav = () => {
       skills: [
         { name: "Node.js", proficiency: 80 },
         { name: "MicroSoft SQl Server", proficiency: 85 },
-        { name: "SQL", proficiency: 88 },
-        { name: "Veem backup", proficiency: 90 },
+        // { name: "SQL", proficiency: 88 },
+        // { name: "Veem backup", proficiency: 90 },
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
         { name: "Postman", proficiency: 90 },
-        { name: "Dynamo DB", proficiency: 82 },
+        // { name: "Dynamo DB", proficiency: 82 },
         { name: "Deployment", proficiency: 95 },
         { name: "Git", proficiency: 95 },
-        { name: "GitHub", proficiency: 95 },
+        // { name: "CI/CD", proficiency: 95 },
       ],
     },
   ];
-  const skills = [
-    "ES6",
-    "TypeScript",
-    "HTML",
-    "CSS",
-    "Ionic",
-    "Carbon React",
 
-    "MongoDB",
-  ];
   return (
     <>
       <div className="relative bg-neutral-900">
@@ -298,15 +295,51 @@ const Nav = () => {
               <p className="text-neutral-400 mb-6">
                 Additional technologies I work with
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 rounded-full border border-neutral-800 text-neutral-300 hover:border-emerald-500 hover:text-white transition-colors duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              {/* <Techstack /> */}
+
+              <div
+                className="flex flex-wrap justify-center gap-4"
+                style={{ color: "white" }}
+              >
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiJavascript1 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaReact />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiRedux />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiVeeam />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiHtml5 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiCss3 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaNode />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <TbBrandNextjs />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiDatabase />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiSalesforce />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <TbBrandCarbon />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaJava />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiJavascript />
+                </Col>
               </div>
             </div>
           </div>

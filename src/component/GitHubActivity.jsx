@@ -1,4 +1,6 @@
 import React from "react";
+import { Row } from "react-bootstrap";
+import GitHubCalendar from "react-github-calendar";
 
 const GitHubActivity = () => {
   return (

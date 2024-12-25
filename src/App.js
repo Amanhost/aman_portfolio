@@ -5,7 +5,7 @@ import Blog from './component/Blog';
 import Project from './Project';
 import Nav from './component/Nav';
 import ContactSection from './component/ContactSection';
-
+import './style.css'
 
 const App = () => {
   return (
