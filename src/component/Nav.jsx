@@ -9,7 +9,7 @@ import BlogInsights from "./BlogInsights";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
-import avtar from "../../src/Assets/Image/amanimg.jpg";
+import avtar from "../../src/Assets/Image/amanimg.png";
 import Techstack from "./Techstack";
 
 import { Col, Row } from "react-bootstrap";
@@ -183,12 +183,18 @@ const Nav = () => {
           id="navbar_hero"
           className="relative min-h-screen pt-20 overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <h5 className="text-4xl lg:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Hi, NICE TO MEET YOU! I'M{" "}
-                  <span className="text-emerald-500">Aman Prakash 👋🏻</span>
+                  <span
+                    className="wave text-emerald-500"
+                    role="img"
+                    aria-labelledby="wave"
+                  >
+                    Aman Prakash 👋🏻
+                  </span>
                   <span className="text-emerald-500">
                     <Type />
                   </span>
@@ -215,7 +221,9 @@ const Nav = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square rounded-full bg-emerald-500/20 animate-pulse"></div>
+                <div className="aspect-square rounded-full bg-emerald-500/20 animate-pulse">
+                  sdsd
+                </div>
                 <img
                   src={avtar}
                   alt="Developer Profile"
