@@ -90,13 +90,6 @@ const ContactSection = () => {
             {/* Contact Information */}
 
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Let's Connect
-              </h2>
-              <p className="text-neutral-400 mb-8">
-                Have a project in mind? Let's discuss how we can work together
-                to create something amazing.
-              </p>
               <div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
                   Let's Connect
