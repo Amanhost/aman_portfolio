@@ -33,7 +33,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-neutral-900">
+    <section id="testimonials" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -47,7 +47,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300"
+              className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden">

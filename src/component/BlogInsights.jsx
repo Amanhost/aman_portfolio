@@ -3,7 +3,7 @@ import React from "react";
 const BlogInsights = () => {
   return (
     <div id="root">
-      <section id="blog_insights" className="py-24 bg-neutral-900">
+      <section id="blog_insights" className="py-24 section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -16,7 +16,7 @@ const BlogInsights = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Blog Post 1 */}
-            <article className="group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
+            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
               <div className="aspect-video w-full overflow-hidden">
                 <img
                   src="https://placehold.co/600x400?text=Modern+Web+Development"
@@ -26,7 +26,7 @@ const BlogInsights = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 text-emerald-500">
+                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
                     Development
                   </span>
                   <span className="text-neutral-400 text-sm">5 min read</span>
@@ -40,7 +40,7 @@ const BlogInsights = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
                   <svg
@@ -61,7 +61,7 @@ const BlogInsights = () => {
             </article>
 
             {/* Blog Post 2 */}
-            <article className="group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
+            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
               <div className="aspect-video w-full overflow-hidden">
                 <img
                   src="https://placehold.co/600x400?text=Performance+Optimization"
@@ -71,7 +71,7 @@ const BlogInsights = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 text-emerald-500">
+                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
                     Performance
                   </span>
                   <span className="text-neutral-400 text-sm">8 min read</span>
@@ -85,7 +85,7 @@ const BlogInsights = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
                   <svg
@@ -106,7 +106,7 @@ const BlogInsights = () => {
             </article>
 
             {/* Blog Post 3 */}
-            <article className="group rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
+            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
               <div className="aspect-video w-full overflow-hidden">
                 <img
                   src="https://placehold.co/600x400?text=AI+in+Development"
@@ -116,7 +116,7 @@ const BlogInsights = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 text-emerald-500">
+                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
                     AI & ML
                   </span>
                   <span className="text-neutral-400 text-sm">6 min read</span>
@@ -130,7 +130,7 @@ const BlogInsights = () => {
                 </p>
                 <a
                   href="#"
-                  className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
                   <svg
@@ -152,7 +152,7 @@ const BlogInsights = () => {
           </div>
 
           {/* Newsletter Subscription */}
-          <div className="mt-16 p-8 rounded-xl border border-neutral-800 bg-neutral-900">
+          <div className="mt-16 p-8 rounded-xl border border-neutral-800 section">
             <div className="max-w-2xl mx-auto text-center">
               <h3 className="text-2xl font-semibold text-white mb-4">
                 Subscribe to My Newsletter

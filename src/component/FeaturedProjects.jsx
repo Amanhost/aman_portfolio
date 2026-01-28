@@ -40,7 +40,7 @@ const FeaturedProjects = () => {
   };
 
   return (
-    <section id="featured_projects" className="py-24 bg-neutral-900">
+    <section id="featured_projects" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -55,7 +55,7 @@ const FeaturedProjects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-xl border border-neutral-800 bg-neutral-900 overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
+              className="group relative rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300"
             >
               <div className="aspect-video w-full overflow-hidden">
                 <img
@@ -73,7 +73,7 @@ const FeaturedProjects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 text-emerald-500"
+                      className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald"
                     >
                       {tech}
                     </span>
@@ -83,7 +83,7 @@ const FeaturedProjects = () => {
                   <a
                     target="_blank"
                     href={project.git}
-                    className="text-neutral-300 hover:text-emerald-500 transition-colors duration-300"
+                    className="text-neutral-300 hover:status-emerald transition-colors duration-300"
                   >
                     <svg
                       className="w-6 h-6"
@@ -96,7 +96,7 @@ const FeaturedProjects = () => {
                   </a>
                   <a
                     href="#"
-                    className="text-neutral-300 hover:text-emerald-500 transition-colors duration-300"
+                    className="text-neutral-300 hover:status-emerald transition-colors duration-300"
                   >
                     <svg
                       className="w-6 h-6"

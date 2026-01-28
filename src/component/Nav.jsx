@@ -9,7 +9,7 @@ import BlogInsights from "./BlogInsights";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
-import avtar from "../../src/Assets/Image/amanimg.png";
+import avtar from "../../src/Assets/Image/aman.png";
 import Techstack from "./Techstack";
 
 import { Col, Row } from "react-bootstrap";
@@ -65,13 +65,13 @@ const Nav = () => {
 
   return (
     <>
-      <div className="relative bg-neutral-900">
-        <header className="fixed w-full top-0 z-50 border-b border-neutral-800 bg-neutral-900/80 backdrop-blur-lg">
+      <div className="relative section">
+        <header className="fixed w-full top-0 z-50 border-b border-neutral-800 section/80 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
                 <a href="#" className="text-2xl font-bold text-white">
-                  AMAN<span className="text-emerald-500">.PRAKASH</span>
+                  AMAN<span className="status-emerald">.PRAKASH</span>
                 </a>
               </div>
 
@@ -167,7 +167,7 @@ const Nav = () => {
                     href={link.href}
                     className={`block px-3 py-2 transition-colors duration-300 ${
                       link.isActive
-                        ? "text-emerald-500 hover:text-emerald-400"
+                        ? "status-emerald hover:text-emerald-400"
                         : "text-neutral-300 hover:text-white"
                     }`}
                   >
@@ -189,21 +189,22 @@ const Nav = () => {
                 <h5 className="text-4xl lg:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Hi, NICE TO MEET YOU! I'M{" "}
                   <span
-                    className="wave text-emerald-500"
+                    className="wave status-emerald"
                     role="img"
                     aria-labelledby="wave"
                   >
                     Aman Prakash 👋🏻
                   </span>
-                  <span className="text-emerald-500">
+                  <span className="status-emerald">
                     <Type />
                   </span>
                 </h5>
 
                 <p className="text-lg text-neutral-300">
-                  Full-stack developer passionate about building innovative
-                  solutions and creating seamless user experiences. Let's turn
-                  ideas into reality.
+                  AI Software Engineer with 6+ years of experience designing,
+                  building, and deploying intelligent systems, cloud-native
+                  platforms, and AI-powered applications that deliver measurable
+                  business impact.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
@@ -221,13 +222,11 @@ const Nav = () => {
                 </div>
               </div>
               <div className="relative">
-                <div className="aspect-square rounded-full bg-emerald-500/20 animate-pulse">
-                  sdsd
-                </div>
+                <div className="aspect-square rounded-full bg-emerald-500/20 animate-pulse"></div>
                 <img
                   src={avtar}
                   alt="Developer Profile"
-                  className="absolute inset-0 w-full h-full object-cover rounded-full border-2 border-emerald-500"
+                  className="absolute inset-0 w-full h-full object-cover rounded-full border-2 avtarimg"
                 />
               </div>
             </div>
@@ -256,7 +255,7 @@ const Nav = () => {
         </section>
       </div>
       <div id="root">
-        <section id="tech_stack" className="relative py-24 bg-neutral-900">
+        <section id="tech_stack" className="relative py-24 section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -272,7 +271,7 @@ const Nav = () => {
               {skillCategories.map((category, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-colors duration-300"
+                  className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-colors duration-300"
                 >
                   <h3 className="text-xl font-semibold text-white mb-4">
                     {category.title}
@@ -282,7 +281,7 @@ const Nav = () => {
                       <div key={idx} className="group">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-neutral-300">{skill.name}</span>
-                          <span className="text-emerald-500">
+                          <span className="status-emerald">
                             {skill.proficiency}%
                           </span>
                         </div>
@@ -361,8 +360,8 @@ const Nav = () => {
       <Testimonials />
       <GitHubActivity />
       <BlogInsights />
-      {/* <Resume /> */}
       <ContactSection />
+      {/* <Resume  /> */}
 
       <Footer />
     </>

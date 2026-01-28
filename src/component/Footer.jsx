@@ -50,7 +50,7 @@ const Footer = () => {
   ];
   return (
     <div id="root">
-      <footer id="footer" className="bg-neutral-900 text-neutral-400">
+      <footer id="footer" className="section text-neutral-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">

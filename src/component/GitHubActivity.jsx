@@ -4,7 +4,7 @@ import GitHubCalendar from "react-github-calendar";
 
 const GitHubActivity = () => {
   return (
-    <section id="github_activity" className="py-24 bg-neutral-900">
+    <section id="github_activity" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -18,34 +18,32 @@ const GitHubActivity = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contribution Stats */}
           <div className="lg:col-span-2 grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
-              <div className="text-2xl font-bold text-emerald-500 mb-2">
+            <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
+              <div className="text-2xl font-bold status-emerald mb-2">
                 1,234
               </div>
               <div className="text-sm text-neutral-400">
                 Total Contributions
               </div>
             </div>
-            <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
-              <div className="text-2xl font-bold text-emerald-500 mb-2">45</div>
+            <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
+              <div className="text-2xl font-bold status-emerald mb-2">45</div>
               <div className="text-sm text-neutral-400">
                 Public Repositories
               </div>
             </div>
-            <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
-              <div className="text-2xl font-bold text-emerald-500 mb-2">
-                156
-              </div>
+            <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
+              <div className="text-2xl font-bold status-emerald mb-2">156</div>
               <div className="text-sm text-neutral-400">Pull Requests</div>
             </div>
-            <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
-              <div className="text-2xl font-bold text-emerald-500 mb-2">89</div>
+            <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
+              <div className="text-2xl font-bold status-emerald mb-2">89</div>
               <div className="text-sm text-neutral-400">Code Reviews</div>
             </div>
           </div>
 
           {/* GitHub Profile Link */}
-          <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between">
+          <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300 flex flex-col justify-between">
             <div className="mb-4">
               <svg
                 className="w-10 h-10 text-white mb-4"

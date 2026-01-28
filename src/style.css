@@ -1,3 +1,21 @@
+:root {
+ --app-bg: #0B0F19;        /* Main background */
+  --app-surface: #111827;  /* Cards / sections */
+  --app-text: #e5e7eb;
+
+
+  --status-emerald: #9ca3af;
+  --status-emerald-border: rgba(179, 196, 190, 0.3);
+}
+
+.section {
+  background-color: var(--app-bg);
+}
+.status-emerald {
+  color: var(--status-emerald);
+  border-color: var(--status-emerald-border);
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }

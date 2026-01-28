@@ -26,7 +26,7 @@ const AboutJourney = () => {
   ];
 
   return (
-    <section id="about_journey" className="py-24 bg-neutral-900">
+    <section id="about_journey" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
@@ -73,9 +73,9 @@ const AboutJourney = () => {
               {stats.map(({ label, value }, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-800 section"
                 >
-                  <span className="text-emerald-500">{value}</span>
+                  <span className="status-emerald">{value}</span>
                   <span className="text-neutral-400">{label}</span>
                 </div>
               ))}
@@ -84,7 +84,7 @@ const AboutJourney = () => {
             <div>
               <a
                 href="#contact_connect"
-                className="inline-flex items-center gap-2 text-emerald-500 hover:text-emerald-400 transition-colors duration-300"
+                className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
               >
                 <span>Let's create something amazing together</span>
                 <svg

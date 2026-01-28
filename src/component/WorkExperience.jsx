@@ -32,7 +32,7 @@ const WorkExperience = () => {
   ];
 
   return (
-    <section id="work_experience" className="py-24 bg-neutral-900">
+    <section id="work_experience" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -53,7 +53,7 @@ const WorkExperience = () => {
                 </div>
                 <div className="md:grid md:grid-cols-2 gap-8 items-center">
                   <div className="md:text-right mb-8 md:mb-0 md:pr-12">
-                    <div className="inline-block px-4 py-2 rounded-full border border-emerald-500/30 text-emerald-500 mb-4">
+                    <div className="inline-block px-4 py-2 rounded-full border border-emerald-500/30 status-emerald mb-4">
                       {exp.time}
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-2">
@@ -62,7 +62,7 @@ const WorkExperience = () => {
                     <p className="text-neutral-400">{exp.company}</p>
                   </div>
                   <div className="md:pl-12">
-                    <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900/50 hover:border-emerald-500/50 transition-all duration-300">
+                    <div className="p-6 rounded-xl border border-neutral-800 section/50 hover:border-emerald-500/50 transition-all duration-300">
                       <ul className="space-y-3 text-neutral-400">
                         {exp.details.map((detail, idx) => (
                           <li key={idx} className="flex items-start gap-3">
@@ -83,7 +83,7 @@ const WorkExperience = () => {
           <a
             href={pdf}
             target="_blank"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 status-emerald hover:bg-emerald-500 hover:text-white transition-all duration-300"
           >
             <span>Download Resume</span>
             <svg

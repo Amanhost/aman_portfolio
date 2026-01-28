@@ -23,7 +23,7 @@ const ContactSection = () => {
         "service_eo5g05q",
         "template_i06qafe",
         e.target,
-        "BW6ZLt7WZuZzD9vPy"
+        "BW6ZLt7WZuZzD9vPy",
       )
       .then(
         (result) => {
@@ -32,7 +32,7 @@ const ContactSection = () => {
         },
         (error) => {
           setStatus("Failed to send message. Please try again.");
-        }
+        },
       );
   };
   const socialLinks = [
@@ -84,7 +84,7 @@ const ContactSection = () => {
   ];
   return (
     <div id="root">
-      <section id="contact_connect" className="py-24 bg-neutral-900">
+      <section id="contact_connect" className="py-24 section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
@@ -104,7 +104,7 @@ const ContactSection = () => {
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-lg bg-emerald-500/10">
                       <svg
-                        className="w-6 h-6 text-emerald-500"
+                        className="w-6 h-6 status-emerald"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -123,7 +123,7 @@ const ContactSection = () => {
                       </h3>
                       <a
                         href="mailto:amanprakash1639@gmail.com"
-                        className="text-neutral-400 hover:text-emerald-500 transition-colors duration-300"
+                        className="text-neutral-400 hover:status-emerald transition-colors duration-300"
                       >
                         amanprakash1639@gmail.com
                       </a>
@@ -134,7 +134,7 @@ const ContactSection = () => {
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-lg bg-emerald-500/10">
                       <svg
-                        className="w-6 h-6 text-emerald-500"
+                        className="w-6 h-6 status-emerald"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -185,7 +185,7 @@ const ContactSection = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="p-8 rounded-xl border border-neutral-800 bg-neutral-900">
+            <div className="p-8 rounded-xl border border-neutral-800 section">
               <h3 className="text-2xl font-semibold text-white mb-6">
                 Send a Message
               </h3>
