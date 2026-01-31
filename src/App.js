@@ -6,7 +6,7 @@ import Project from "./Project";
 import Nav from "./component/Nav";
 import ContactSection from "./component/ContactSection";
 import "./style.css";
-
+console.log();
 const App = () => {
   return (
     <Router>
