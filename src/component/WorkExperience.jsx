@@ -82,6 +82,7 @@ const WorkExperience = () => {
         <div className="mt-16 text-center">
           <a
             href={pdf}
+            rel="noopener noreferrer"
             target="_blank"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 status-emerald hover:bg-emerald-500 hover:text-white transition-all duration-300"
           >
