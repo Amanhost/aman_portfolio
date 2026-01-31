@@ -2,7 +2,7 @@ import React from "react";
 
 const SkillsExpertise = () => {
   return (
-    <section id="skills_expertise" className="py-24 bg-neutral-900">
+    <section id="skills_expertise" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -16,10 +16,10 @@ const SkillsExpertise = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Frontend Development */}
-          <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-emerald-500"
+                className="w-6 h-6 status-emerald"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -56,10 +56,10 @@ const SkillsExpertise = () => {
           </div>
 
           {/* Backend Development */}
-          <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-emerald-500"
+                className="w-6 h-6 status-emerald"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -96,10 +96,10 @@ const SkillsExpertise = () => {
           </div>
 
           {/* DevOps & Tools */}
-          <div className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300">
+          <div className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300">
             <div className="w-12 h-12 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-6">
               <svg
-                className="w-6 h-6 text-emerald-500"
+                className="w-6 h-6 status-emerald"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -142,30 +142,22 @@ const SkillsExpertise = () => {
           </div>
         </div>
 
-        <div className="mt-16 p-8 rounded-xl border border-neutral-800 bg-neutral-900">
+        <div className="mt-16 p-8 rounded-xl border border-neutral-800 section">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">
-                95%
-              </div>
+              <div className="text-3xl font-bold status-emerald mb-2">95%</div>
               <div className="text-neutral-400">Frontend Development</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">
-                90%
-              </div>
+              <div className="text-3xl font-bold status-emerald mb-2">90%</div>
               <div className="text-neutral-400">Backend Development</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">
-                85%
-              </div>
+              <div className="text-3xl font-bold status-emerald mb-2">85%</div>
               <div className="text-neutral-400">DevOps</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-500 mb-2">
-                92%
-              </div>
+              <div className="text-3xl font-bold status-emerald mb-2">92%</div>
               <div className="text-neutral-400">Problem Solving</div>
             </div>
           </div>

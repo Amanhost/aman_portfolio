@@ -1,0 +1,9 @@
+:root {
+  --status-emerald: #10b981;
+  --status-emerald-border: rgba(16, 185, 129, 0.3);
+}
+
+.status-emerald {
+  color: var(--status-emerald);
+  border-color: var(--status-emerald-border);
+}

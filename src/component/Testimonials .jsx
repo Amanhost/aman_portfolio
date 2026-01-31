@@ -3,17 +3,37 @@ import React from "react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
+      name: "Finnova",
       role: "CEO, TechStart",
       feedback:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "Working with this team has been an absolute pleasure! Their expertise and dedication have truly elevated our project to new heights.",
       avatar: "https://avatar.iran.liara.run/public",
     },
-    // Add more testimonials as needed
+    {
+      name: "Choice",
+      role: "DS Engineer",
+      feedback:
+        "A phenomenal experience from start to finish. The team's professionalism and attention to detail exceeded all my expectations!",
+      avatar: "https://avatar.iran.liara.run/public",
+    },
+    {
+      name: "Adity Goyal",
+      role: "Product Manager",
+      feedback:
+        "I couldn't be happier with the results. Every step of the process was handled with care and precision.",
+      avatar: "https://avatar.iran.liara.run/public",
+    },
+    {
+      name: "Bharat Singodiya ",
+      role: "InnovateTech",
+      feedback:
+        "An outstanding team that consistently delivers exceptional results. Highly recommended!",
+      avatar: "https://avatar.iran.liara.run/public",
+    },
   ];
 
   return (
-    <section id="testimonials" className="py-24 bg-neutral-900">
+    <section id="testimonials" className="py-24 section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -27,7 +47,7 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-all duration-300"
+              className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-all duration-300"
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 rounded-full overflow-hidden">

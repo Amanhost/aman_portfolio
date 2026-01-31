@@ -9,8 +9,14 @@ import BlogInsights from "./BlogInsights";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
-import avtar from "../../src/Assets/Image/amanimg.jpg";
-import Resume from "./Resume";
+import avtar from "../../src/Assets/Image/aman.png";
+import Techstack from "./Techstack";
+
+import { Col, Row } from "react-bootstrap";
+import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
+import { FaJava, FaNode, FaReact } from "react-icons/fa";
+import { SiJavascript, SiRedux, SiSalesforce, SiVeeam } from "react-icons/si";
+import { TbBrandCarbon, TbBrandNextjs } from "react-icons/tb";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +39,7 @@ const Nav = () => {
         { name: "React.js", proficiency: 95 },
         { name: "JavaScript", proficiency: 95 },
         { name: "Redux", proficiency: 90 },
-        { name: "Tailwind CSS", proficiency: 98 },
+        // { name: "Tailwind CSS", proficiency: 98 },
       ],
     },
     {
@@ -41,40 +47,31 @@ const Nav = () => {
       skills: [
         { name: "Node.js", proficiency: 80 },
         { name: "MicroSoft SQl Server", proficiency: 85 },
-        { name: "SQL", proficiency: 88 },
-        { name: "Veem backup", proficiency: 90 },
+        // { name: "SQL", proficiency: 88 },
+        // { name: "Veem backup", proficiency: 90 },
       ],
     },
     {
       title: "DevOps & Tools",
       skills: [
         { name: "Postman", proficiency: 90 },
-        { name: "Dynamo DB", proficiency: 82 },
+        // { name: "Dynamo DB", proficiency: 82 },
         { name: "Deployment", proficiency: 95 },
         { name: "Git", proficiency: 95 },
-        { name: "GitHub", proficiency: 95 },
+        // { name: "CI/CD", proficiency: 95 },
       ],
     },
   ];
-  const skills = [
-    "ES6",
-    "TypeScript",
-    "HTML",
-    "CSS",
-    "Ionic",
-    "Carbon React",
 
-    "MongoDB",
-  ];
   return (
     <>
-      <div className="relative bg-neutral-900">
-        <header className="fixed w-full top-0 z-50 border-b border-neutral-800 bg-neutral-900/80 backdrop-blur-lg">
+      <div className="relative section">
+        <header className="fixed w-full top-0 z-50 border-b border-neutral-800 section/80 backdrop-blur-lg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
                 <a href="#" className="text-2xl font-bold text-white">
-                  AMAN<span className="text-emerald-500">.PRAKASH</span>
+                  AMAN<span className="status-emerald">.PRAKASH</span>
                 </a>
               </div>
 
@@ -170,7 +167,7 @@ const Nav = () => {
                     href={link.href}
                     className={`block px-3 py-2 transition-colors duration-300 ${
                       link.isActive
-                        ? "text-emerald-500 hover:text-emerald-400"
+                        ? "status-emerald hover:text-emerald-400"
                         : "text-neutral-300 hover:text-white"
                     }`}
                   >
@@ -186,21 +183,28 @@ const Nav = () => {
           id="navbar_hero"
           className="relative min-h-screen pt-20 overflow-hidden"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <h5 className="text-4xl lg:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Hi, NICE TO MEET YOU! I'M{" "}
-                  <span className="text-emerald-500">Aman Prakash 👋🏻</span>
-                  <span className="text-emerald-500">
+                  <span
+                    className="wave status-emerald"
+                    role="img"
+                    aria-labelledby="wave"
+                  >
+                    Aman Prakash 👋🏻
+                  </span>
+                  <span className="status-emerald">
                     <Type />
                   </span>
                 </h5>
 
                 <p className="text-lg text-neutral-300">
-                  Full-stack developer passionate about building innovative
-                  solutions and creating seamless user experiences. Let's turn
-                  ideas into reality.
+                  AI Software Engineer with 6+ years of experience designing,
+                  building, and deploying intelligent systems, cloud-native
+                  platforms, and AI-powered applications that deliver measurable
+                  business impact.
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a
@@ -222,7 +226,7 @@ const Nav = () => {
                 <img
                   src={avtar}
                   alt="Developer Profile"
-                  className="absolute inset-0 w-full h-full object-cover rounded-full border-2 border-emerald-500"
+                  className="absolute inset-0 w-full h-full object-cover rounded-full border-2 avtarimg"
                 />
               </div>
             </div>
@@ -251,7 +255,7 @@ const Nav = () => {
         </section>
       </div>
       <div id="root">
-        <section id="tech_stack" className="relative py-24 bg-neutral-900">
+        <section id="tech_stack" className="relative py-24 section">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -267,7 +271,7 @@ const Nav = () => {
               {skillCategories.map((category, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-xl border border-neutral-800 bg-neutral-900 hover:border-emerald-500/50 transition-colors duration-300"
+                  className="p-6 rounded-xl border border-neutral-800 section hover:border-emerald-500/50 transition-colors duration-300"
                 >
                   <h3 className="text-xl font-semibold text-white mb-4">
                     {category.title}
@@ -277,7 +281,7 @@ const Nav = () => {
                       <div key={idx} className="group">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-neutral-300">{skill.name}</span>
-                          <span className="text-emerald-500">
+                          <span className="status-emerald">
                             {skill.proficiency}%
                           </span>
                         </div>
@@ -298,15 +302,51 @@ const Nav = () => {
               <p className="text-neutral-400 mb-6">
                 Additional technologies I work with
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 rounded-full border border-neutral-800 text-neutral-300 hover:border-emerald-500 hover:text-white transition-colors duration-300"
-                  >
-                    {skill}
-                  </span>
-                ))}
+              {/* <Techstack /> */}
+
+              <div
+                className="flex flex-wrap justify-center gap-4"
+                style={{ color: "white" }}
+              >
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiJavascript1 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaReact />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiRedux />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiVeeam />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiHtml5 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiCss3 />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaNode />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <TbBrandNextjs />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <DiDatabase />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiSalesforce />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <TbBrandCarbon />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <FaJava />
+                </Col>
+                <Col xs={4} md={2} className="tech-icons">
+                  <SiJavascript />
+                </Col>
               </div>
             </div>
           </div>
@@ -320,8 +360,8 @@ const Nav = () => {
       <Testimonials />
       <GitHubActivity />
       <BlogInsights />
-      {/* <Resume /> */}
       <ContactSection />
+      {/* <Resume  /> */}
 
       <Footer />
     </>

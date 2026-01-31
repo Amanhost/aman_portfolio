@@ -1,17 +1,17 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-import Blog from './component/Blog';
-import Project from './Project';
-import Nav from './component/Nav';
-import ContactSection from './component/ContactSection';
-
-
+import Blog from "./component/Blog";
+import Project from "./Project";
+import Nav from "./component/Nav";
+import ContactSection from "./component/ContactSection";
+import "./style.css";
+console.log();
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <Nav/>
+        <Nav />
       </div>
     </Router>
   );
