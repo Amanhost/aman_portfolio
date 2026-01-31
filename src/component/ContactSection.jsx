@@ -172,6 +172,7 @@ const ContactSection = () => {
                           key={link.name}
                           href={link.href}
                           target="_blank"
+                          rel="noopener noreferrer"
                           className="p-2 rounded-lg bg-neutral-800 text-neutral-400 hover:bg-emerald-500 hover:text-white transition-all duration-300"
                         >
                           <span className="sr-only">{link.name}</span>

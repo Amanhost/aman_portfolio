@@ -82,6 +82,7 @@ const FeaturedProjects = () => {
                 <div className="flex gap-4">
                   <a
                     target="_blank"
+                    rel="noopener noreferrer"
                     href={project.git}
                     className="text-neutral-300 hover:status-emerald transition-colors duration-300"
                   >

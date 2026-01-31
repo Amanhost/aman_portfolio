@@ -24,6 +24,7 @@ const Resume = () => {
             variant="primary"
             href={pdf}
             target="_blank"
+            rel="noopener noreferrer"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
@@ -42,6 +43,7 @@ const Resume = () => {
             variant="primary"
             href={pdf}
             target="_blank"
+            rel="noopener noreferrer"
             style={{ maxWidth: "250px" }}
           >
             <AiOutlineDownload />
