@@ -79,7 +79,7 @@ const Footer = () => {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="hover:text-white transition-colors duration-300"
                   >
                     Home
@@ -87,7 +87,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="hover:text-white transition-colors duration-300"
                   >
                     About
@@ -95,7 +95,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="hover:text-white transition-colors duration-300"
                   >
                     Projects
@@ -103,7 +103,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="hover:text-white transition-colors duration-300"
                   >
                     Skills
@@ -111,7 +111,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="hover:text-white transition-colors duration-300"
                   >
                     Contact

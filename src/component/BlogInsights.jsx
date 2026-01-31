@@ -39,7 +39,7 @@ const BlogInsights = () => {
                   development, from performance optimization to user experience.
                 </p>
                 <a
-                  href="#"
+                  href="https://github.com/amanprakash"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
@@ -84,7 +84,7 @@ const BlogInsights = () => {
                   application performance and improving user experience.
                 </p>
                 <a
-                  href="#"
+                  href="https://github.com/amanprakash"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
@@ -129,7 +129,7 @@ const BlogInsights = () => {
                   landscape of web development and user interactions.
                 </p>
                 <a
-                  href="#"
+                  href="https://github.com/amanprakash"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
