@@ -84,7 +84,6 @@ const WorkExperience = () => {
             href={pdf}
             rel="noopener noreferrer"
             target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-emerald-500 status-emerald hover:bg-emerald-500 hover:text-white transition-all duration-300"
           >
             <span>Download Resume</span>
