@@ -66,6 +66,7 @@ const Footer = () => {
                     href={link.href}
                     className="hover:text-white transition-colors duration-300"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="sr-only">{link.name}</span>
                     {link.icon}
