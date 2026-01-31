@@ -10,9 +10,8 @@ import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
 import avtar from "../../src/Assets/Image/aman.png";
-import Techstack from "./Techstack";
 
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
 import { FaJava, FaNode, FaReact } from "react-icons/fa";
 import { SiJavascript, SiRedux, SiSalesforce, SiVeeam } from "react-icons/si";
@@ -70,7 +69,10 @@ const Nav = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
-                <a href="#" className="text-2xl font-bold text-white">
+                <a
+                  href="https://github.com/amanprakash"
+                  className="text-2xl font-bold text-white"
+                >
                   AMAN<span className="status-emerald">.PRAKASH</span>
                 </a>
               </div>

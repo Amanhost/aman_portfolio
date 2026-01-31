@@ -17,7 +17,10 @@ const Blog = () => {
               <p className="text-gray-300">
                 A short snippet of the blog post content.
               </p>
-              <a href="#" className="text-blue-500 hover:text-blue-400">
+              <a
+                href="https://github.com/amanprakash"
+                className="text-blue-500 hover:text-blue-400"
+              >
                 Read more
               </a>
             </div>
@@ -33,7 +36,10 @@ const Blog = () => {
               <p className="text-gray-300">
                 A short snippet of the blog post content.
               </p>
-              <a href="#" className="text-blue-500 hover:text-blue-400">
+              <a
+                href="https://github.com/amanprakash"
+                className="text-blue-500 hover:text-blue-400"
+              >
                 Read more
               </a>
             </div>

@@ -95,7 +95,7 @@ const FeaturedProjects = () => {
                     </svg>
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/amanprakash"
                     className="text-neutral-300 hover:status-emerald transition-colors duration-300"
                   >
                     <svg
