@@ -1,6 +1,7 @@
 import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   const socialLinks = [
     {
       name: "WhatsApp",
@@ -195,12 +196,12 @@ const Footer = () => {
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <div className="mt-12 pt-8 border-t border-neutral-800">
               <p className="text-center text-sm">
-                Design and Developed By Aman Prakah.
+                Design and Developed By Aman Prakash.
               </p>
             </div>
             <div className="mt-12 pt-8 border-t border-neutral-800">
               <p className="text-center text-sm">
-                &copy; 2024 Portfolio. All rights reserved. Built with{" "}
+                &copy; {currentYear} Portfolio. All rights reserved. Built with{" "}
                 amanprakash1639@gmail.com
               </p>
             </div>

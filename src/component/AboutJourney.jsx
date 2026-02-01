@@ -1,6 +1,10 @@
 import React from "react";
 
 const AboutJourney = () => {
+  const CAREER_START_YEAR = 2021;
+
+  const currentYear = new Date().getFullYear();
+  const yearsExperience = currentYear - CAREER_START_YEAR;
   const highlights = [
     {
       title: "Passion for Problem Solving",
@@ -20,7 +24,7 @@ const AboutJourney = () => {
   ];
 
   const stats = [
-    { label: "Years Experience", value: "3+" },
+    { label: "Years Experience", value: `${yearsExperience}+` },
     { label: "Projects Completed", value: "25+" },
     { label: "Happy Clients", value: "18+" },
   ];
