@@ -35,12 +35,45 @@ const Nav = () => {
     {
       title: "Frontend Development",
       skills: [
-        { name: "React.js", proficiency: 95 },
         { name: "JavaScript", proficiency: 95 },
-        { name: "Redux", proficiency: 90 },
-        // { name: "Tailwind CSS", proficiency: 98 },
+        { name: "React.js", proficiency: 95 },
+        { name: "Netx Js", proficiency: 95 },
+        { name: "Redux", proficiency: 95 },
+        { name: "MUI Core", proficiency: 82 },
+        { name: "Carbon Design System", proficiency: 80 },
+        { name: "Styled Component", proficiency: 85 },
       ],
     },
+    {
+      title: "Performance Optimization",
+      skills: [
+        { name: "Server Components (Next 13+)", proficiency: 85 },
+        { name: "SSR / SSG / ISR", proficiency: 85 },
+        { name: "memo, useCallback, virtualization", proficiency: 95 },
+      ],
+    },
+    {
+      title: "AI & Intelligence Layer",
+      skills: [
+        {
+          name: "OpenAI APIs (GPT-4 / GPT-4o), Function Calling & Tool Orchestration",
+          proficiency: 92,
+        },
+        {
+          name: "Prompt Engineering, System Design & Structured JSON Responses",
+          proficiency: 95,
+        },
+        {
+          name: "Token Management, Cost Optimization & AI Workflow Design",
+          proficiency: 88,
+        },
+        {
+          name: "Cursor AI – AI-assisted Development, Refactoring & Test Automation",
+          proficiency: 95,
+        },
+      ],
+    },
+
     {
       title: "Backend Development",
       skills: [
@@ -53,10 +86,12 @@ const Nav = () => {
     {
       title: "DevOps & Tools",
       skills: [
+        { name: "Git", proficiency: 95 },
+        { name: "Azure DevOps", proficiency: 90 },
+        { name: "Docker ,CI/CD Pipeline", proficiency: 80 },
         { name: "Postman", proficiency: 90 },
         // { name: "Dynamo DB", proficiency: 82 },
         { name: "Deployment", proficiency: 95 },
-        { name: "Git", proficiency: 95 },
         // { name: "CI/CD", proficiency: 95 },
       ],
     },
@@ -188,7 +223,7 @@ const Nav = () => {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
-                <h5 className="text-4xl lg:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                <p className="text-4xl lg:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Hi, NICE TO MEET YOU! I'M{" "}
                   <span
                     className="wave status-emerald"
@@ -200,7 +235,7 @@ const Nav = () => {
                   <span className="status-emerald">
                     <Type />
                   </span>
-                </h5>
+                </p>
 
                 <p className="text-lg text-neutral-300">
                   AI Software Engineer with 6+ years of experience designing,
