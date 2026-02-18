@@ -36,7 +36,7 @@ const AboutJourney = () => {
           <div className="relative">
             <div className="relative w-full aspect-square rounded-xl overflow-hidden border border-neutral-800">
               <img
-                src="https://avatar.iran.liara.run/public"
+                src="https://avatar.iran.liara.run/public/boy"
                 alt="Professional Portrait"
                 className="w-full h-full object-cover"
               />

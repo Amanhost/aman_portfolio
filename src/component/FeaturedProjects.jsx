@@ -102,7 +102,7 @@ const FeaturedProjects = () => {
               key={project.id}
               className="group relative rounded-xl overflow-hidden border border-neutral-800
                          hover:border-emerald-500/50 transition-all duration-300
-                         h-auto sm:h-[300px] md:h-[320px]"
+                         aspect-[16/10] sm:aspect-auto sm:h-[300px] md:h-[320px]"
             >
               <img
                 src={project.image}
@@ -113,7 +113,7 @@ const FeaturedProjects = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/20" />
 
-              <div className="relative z-10 h-full flex flex-col justify-between p-4 sm:p-6">
+              <div className="relative z-10 h-full flex flex-col justify-between p-5 sm:p-6">
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
                     {project.title}
@@ -161,13 +161,13 @@ const FeaturedProjects = () => {
           ))}
         </div>
 
-        {/* View More Button */}
         <div className="mt-12 text-center">
           <button
             onClick={() => setShowAll(!showAll)}
             className="inline-flex items-center px-6 py-3 rounded-lg
                        bg-emerald-500 text-white border border-emerald-500
-                       hover:bg-emerald-600 transition-colors"
+                       hover:bg-emerald-600 active:scale-95
+                       transition-all duration-200"
           >
             {showAll ? "View Less Projects" : "View More Projects"}
           </button>

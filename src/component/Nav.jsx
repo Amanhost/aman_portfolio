@@ -87,11 +87,13 @@ const Nav = () => {
       title: "DevOps & Tools",
       skills: [
         { name: "Git", proficiency: 95 },
-        { name: "Azure DevOps", proficiency: 90 },
-        { name: "Docker ,CI/CD Pipeline", proficiency: 80 },
         { name: "Postman", proficiency: 90 },
+        { name: "Azure DevOps", proficiency: 82 },
+        { name: "Dockerfile", proficiency: 90 },
+        { name: "Docker ,CI/CD Pipeline", proficiency: 80 },
+        { name: "SonarQube (Code Quality & Static Analysis)", proficiency: 85 },
+
         // { name: "Dynamo DB", proficiency: 82 },
-        { name: "Deployment", proficiency: 95 },
         // { name: "CI/CD", proficiency: 95 },
       ],
     },
