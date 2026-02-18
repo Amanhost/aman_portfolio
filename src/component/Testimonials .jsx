@@ -1,15 +1,7 @@
 import React from "react";
 import { BsBank } from "react-icons/bs";
-import {
-  FaDatabase,
-  FaMoneyBill,
-  FaQuoteLeft,
-  FaStar,
-  FaUser,
-} from "react-icons/fa";
+import { FaDatabase, FaMoneyBill, FaQuoteLeft, FaStar } from "react-icons/fa";
 import { FcManager } from "react-icons/fc";
-import { GiLeadPipe } from "react-icons/gi";
-import { MdAnalytics } from "react-icons/md";
 
 const Testimonials = () => {
   const testimonials = [
