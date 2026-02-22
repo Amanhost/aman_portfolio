@@ -3,7 +3,7 @@ import { BsChatText } from "react-icons/bs";
 export default function WhatsAppButton() {
   const phoneNumber = "918739071486";
   const message =
-    "Hi! I would like to inquire about your home architecture design services.";
+    "Hello Aman, I reviewed your portfolio and would like to discuss a potential role / opportunity with you.";
 
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
