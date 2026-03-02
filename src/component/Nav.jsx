@@ -9,7 +9,6 @@ import BlogInsights from "./BlogInsights";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
 import Type from "./Type";
-import avtar from "../../src/Assets/Image/aman.png";
 
 import { Col } from "react-bootstrap";
 import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
@@ -263,8 +262,8 @@ const Nav = () => {
               <div className="relative">
                 <div className="aspect-square rounded-full bg-emerald-500/20 animate-pulse"></div>
                 <img
-                  src={avtar}
-                  alt="Developer Profile"
+                  src="/aman-prakash-profile.png"
+                  alt="Aman Prakash Frontend Developer from India"
                   className="absolute inset-0 w-full h-full object-cover rounded-full border-2 avtarimg"
                 />
               </div>
