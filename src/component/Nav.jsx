@@ -15,6 +15,7 @@ import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
 import { FaJava, FaNode, FaReact } from "react-icons/fa";
 import { SiJavascript, SiRedux, SiSalesforce, SiVeeam } from "react-icons/si";
 import { TbBrandCarbon, TbBrandNextjs } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,6 +29,7 @@ const Nav = () => {
     { href: "#about_journey", label: "About" },
     { href: "#work_experience", label: "Experience" },
     { href: "#blog_insights", label: "Blog" },
+    { to: "/resume", label: "Resume" },
     { href: "#contact_connect", label: "Contact", isActive: true },
   ];
   const skillCategories = [
@@ -91,9 +93,6 @@ const Nav = () => {
         { name: "Dockerfile", proficiency: 90 },
         { name: "Docker ,CI/CD Pipeline", proficiency: 80 },
         { name: "SonarQube (Code Quality & Static Analysis)", proficiency: 85 },
-
-        // { name: "Dynamo DB", proficiency: 82 },
-        // { name: "CI/CD", proficiency: 95 },
       ],
     },
   ];
@@ -105,10 +104,7 @@ const Nav = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
-                <a
-                  href="https://github.com/amanprakash"
-                  className="text-2xl font-bold text-white"
-                >
+                <a href="/" className="text-2xl font-bold text-white">
                   AMAN<span className="status-emerald">.PRAKASH</span>
                 </a>
               </div>
@@ -144,6 +140,13 @@ const Nav = () => {
                 >
                   Blog
                 </a>
+                <Link
+                  to="/resume"
+                  className="text-neutral-300 hover:text-white transition-colors duration-300"
+                >
+                  Resume
+                </Link>
+
                 <a
                   href="#contact_connect"
                   className="px-4 py-2 rounded-lg bg-emerald-500 text-white hover:bg-emerald-600 transition-colors duration-300"
@@ -199,19 +202,27 @@ const Nav = () => {
               onClick={() => setIsOpen(false)}
             >
               <div className="px-4 pt-2 pb-3 space-y-1">
-                {links.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className={`block px-3 py-2 transition-colors duration-300 ${
-                      link.isActive
-                        ? "status-emerald hover:text-emerald-400"
-                        : "text-neutral-300 hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {links.map((link, index) =>
+                  link.to ? (
+                    <Link
+                      key={index}
+                      to={link.to}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-3 py-2 text-neutral-300 hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={index}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-3 py-2 text-neutral-300 hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  ),
+                )}
               </div>
             </div>
           )}
