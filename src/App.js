@@ -1,15 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Nav from "./component/Nav";
-import "./style.css";
+import Resume from "./component/Resume/Resume";
 import WhatsAppButton from "./component/ChatBoat/WhatsAppButton";
-console.log();
+import "./style.css";
+
 const App = () => {
   return (
     <Router>
       <div className="App">
-        <Nav />
+        <Routes>
+          {/* Home Page */}
+          <Route path="/" element={<Nav />} />
+
+          {/* Resume Page */}
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+
         <WhatsAppButton />
       </div>
     </Router>
