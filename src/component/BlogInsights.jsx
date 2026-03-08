@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 
 const BlogInsights = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    if (!email) return;
+
+    setLoading(true);
+    setStatus("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/your_form_id", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus("✅ Subscribed successfully!");
+        setEmail("");
+      } else {
+        setStatus("❌ Subscription failed. Try again.");
+      }
+    } catch {
+      setStatus("❌ Something went wrong.");
+    }
+
+    setLoading(false);
+  };
   return (
     <div id="root">
       <section id="blog_insights" className="py-24 section">
@@ -39,7 +71,7 @@ const BlogInsights = () => {
                   development, from performance optimization to user experience.
                 </p>
                 <a
-                  href="https://github.com/amanprakash"
+                  href="https://github.com/Amanhost"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
@@ -84,7 +116,7 @@ const BlogInsights = () => {
                   application performance and improving user experience.
                 </p>
                 <a
-                  href="https://github.com/amanprakash"
+                  href="https://github.com/Amanhost"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
@@ -129,7 +161,7 @@ const BlogInsights = () => {
                   landscape of web development and user interactions.
                 </p>
                 <a
-                  href="https://github.com/amanprakash"
+                  href="https://github.com/Amanhost"
                   className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
                 >
                   <span>Read More</span>
@@ -161,19 +193,34 @@ const BlogInsights = () => {
                 Get the latest insights and development tips directly in your
                 inbox
               </p>
-              <form className="flex flex-col sm:flex-row gap-4">
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col sm:flex-row gap-4"
+              >
                 <input
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:outline-none focus:border-emerald-500"
+                  required
                 />
+
                 <button
                   type="submit"
-                  className="px-6 py-3 rounded-lg bg-emerald-500 text-white hover:bg-emerald-600 transition-colors duration-300"
+                  disabled={loading}
+                  className={`px-6 py-3 rounded-lg text-white transition-colors duration-300 ${
+                    loading
+                      ? "bg-gray-500 cursor-not-allowed"
+                      : "bg-emerald-500 hover:bg-emerald-600"
+                  }`}
                 >
-                  Subscribe
+                  {loading ? "Subscribing..." : "Subscribe"}
                 </button>
               </form>
+              {status && (
+                <p className="text-sm mt-4 text-neutral-300">{status}</p>
+              )}
             </div>
           </div>
         </div>

@@ -18,7 +18,7 @@ const Blog = () => {
                 A short snippet of the blog post content.
               </p>
               <a
-                href="https://github.com/amanprakash"
+                href="https://github.com/Amanhost"
                 className="text-blue-500 hover:text-blue-400"
               >
                 Read more
@@ -37,7 +37,7 @@ const Blog = () => {
                 A short snippet of the blog post content.
               </p>
               <a
-                href="https://github.com/amanprakash"
+                href="https://github.com/Amanhost"
                 className="text-blue-500 hover:text-blue-400"
               >
                 Read more

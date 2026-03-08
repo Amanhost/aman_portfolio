@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,7 @@ const ContactSection = () => {
   });
 
   const [status, setStatus] = useState("");
-
+  const [loading, setLoading] = useState(false);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -18,7 +19,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setLoading(true);
     emailjs
       .sendForm(
         "service_jq4bzdb",
@@ -30,14 +31,15 @@ const ContactSection = () => {
         () => {
           setStatus("✅ Message sent successfully!");
           setFormData({ name: "", email: "", subject: "", message: "" });
+          setLoading(false);
         },
         () => {
           setStatus("❌ Failed to send message. Please try again.");
+          setLoading(false);
         },
       );
   };
 
-  // ✅ WhatsApp Message Builder
   const whatsappMessage = `Hello, my name is ${formData.name}
 Email: ${formData.email}
 Subject: ${formData.subject}
@@ -53,20 +55,12 @@ ${formData.message}`;
     {
       name: "WhatsApp",
       href: "https://wa.me/918739071486",
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.52 3.48A11.944 11.944 0 0012 0C5.373 0 0 5.373 0 12a11.945 11.945 0 001.844 6.328l-1.202 4.386a.75.75 0 00.933.933l4.386-1.202A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12a11.944 11.944 0 00-3.48-8.52z" />
-        </svg>
-      ),
+      icon: <FaWhatsapp className="h-6 w-6" />,
     },
     {
       name: "GitHub",
       href: "https://github.com/Amanhost",
-      icon: (
-        <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0a12 12 0 00-3.797 23.389..." />
-        </svg>
-      ),
+      icon: <FaGithub className="h-6 w-6" />,
     },
   ];
 
@@ -149,9 +143,11 @@ ${formData.message}`;
             {/* ✅ EMAIL BUTTON */}
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition"
+              disabled={loading}
+              className={`w-full px-6 py-3 rounded-lg text-white font-semibold transition 
+                          ${loading ? "bg-gray-500 cursor-not-allowed" : "bg-emerald-500 hover:bg-emerald-600"}`}
             >
-              Send Email
+              {loading ? "Sending Message..." : "Send Email"}
             </button>
 
             {/* ✅ WHATSAPP BUTTON */}
