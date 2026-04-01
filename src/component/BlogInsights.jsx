@@ -96,7 +96,9 @@ const BlogInsights = () => {
                 <span className="px-3 py-1 text-xs rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium">
                   {post.tag}
                 </span>
-                <span className="text-neutral-500 text-xs">{post.readTime}</span>
+                <span className="text-neutral-500 text-xs">
+                  {post.readTime}
+                </span>
               </div>
               <h3 className="text-lg font-semibold text-white mb-2 font-montserrat group-hover:text-emerald-400 transition-colors">
                 {post.title}
@@ -109,8 +111,18 @@ const BlogInsights = () => {
                 className="inline-flex items-center gap-2 text-emerald-400 text-sm hover:text-emerald-300 transition-colors"
               >
                 <span>Read More</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </a>
             </div>
@@ -133,7 +145,10 @@ const BlogInsights = () => {
           <p className="text-neutral-400 text-sm mb-6">
             Get the latest insights and development tips directly in your inbox
           </p>
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+          <form
+            onSubmit={handleSubscribe}
+            className="flex flex-col sm:flex-row gap-3"
+          >
             <input
               type="email"
               placeholder="Enter your email"
@@ -154,9 +169,7 @@ const BlogInsights = () => {
               {loading ? "Subscribing..." : "Subscribe"}
             </button>
           </form>
-          {status && (
-            <p className="text-sm mt-4 text-neutral-300">{status}</p>
-          )}
+          {status && <p className="text-sm mt-4 text-neutral-300">{status}</p>}
         </div>
       </motion.div>
     </SectionWrapper>

@@ -109,7 +109,9 @@ const AboutJourney = () => {
                 key={index}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] backdrop-blur-sm border border-white/[0.06]"
               >
-                <span className="gradient-text font-bold font-montserrat">{value}</span>
+                <span className="gradient-text font-bold font-montserrat">
+                  {value}
+                </span>
                 <span className="text-neutral-400 text-sm">{label}</span>
               </div>
             ))}

@@ -68,7 +68,9 @@ const WorkExperience = () => {
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
-                          transition={{ delay: index * 0.15 + idx * 0.05 + 0.3 }}
+                          transition={{
+                            delay: index * 0.15 + idx * 0.05 + 0.3,
+                          }}
                         >
                           <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 flex-shrink-0" />
                           {detail}
@@ -90,7 +92,12 @@ const WorkExperience = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
       >
-        <Button href={pdf} variant="outline" target="_blank" rel="noopener noreferrer">
+        <Button
+          href={pdf}
+          variant="outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Download Resume
         </Button>
       </motion.div>
