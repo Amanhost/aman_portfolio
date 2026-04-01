@@ -1,12 +1,46 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+import SectionWrapper from "./ui/SectionWrapper";
+import SectionHeader from "./ui/SectionHeader";
+import GlassCard from "./ui/GlassCard";
+
+const blogPosts = [
+  {
+    tag: "Development",
+    readTime: "5 min read",
+    title: "Modern Web Development Practices in 2024",
+    description:
+      "Exploring the latest trends and best practices in modern web development, from performance optimization to user experience.",
+    image: "https://placehold.co/600x400/111827/10b981?text=Web+Dev",
+    link: "https://github.com/Amanhost",
+  },
+  {
+    tag: "Performance",
+    readTime: "8 min read",
+    title: "Advanced Performance Optimization Techniques",
+    description:
+      "Deep dive into advanced techniques for optimizing web application performance and improving user experience.",
+    image: "https://placehold.co/600x400/111827/10b981?text=Performance",
+    link: "https://github.com/Amanhost",
+  },
+  {
+    tag: "AI & ML",
+    readTime: "6 min read",
+    title: "AI Integration in Modern Web Applications",
+    description:
+      "Exploring how artificial intelligence is reshaping the landscape of web development and user interactions.",
+    image: "https://placehold.co/600x400/111827/10b981?text=AI+Dev",
+    link: "https://github.com/Amanhost",
+  },
+];
 
 const BlogInsights = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
+
   const handleSubscribe = async (e) => {
     e.preventDefault();
-
     if (!email) return;
 
     setLoading(true);
@@ -15,217 +49,117 @@ const BlogInsights = () => {
     try {
       const response = await fetch("https://formspree.io/f/your_form_id", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
 
       if (response.ok) {
-        setStatus("✅ Subscribed successfully!");
+        setStatus("Subscribed successfully!");
         setEmail("");
       } else {
-        setStatus("❌ Subscription failed. Try again.");
+        setStatus("Subscription failed. Try again.");
       }
     } catch {
-      setStatus("❌ Something went wrong.");
+      setStatus("Something went wrong.");
     }
-
     setLoading(false);
   };
+
   return (
-    <div id="root">
-      <section id="blog_insights" className="py-24 section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Blog & Insights
-            </h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">
-              Sharing knowledge and experiences from my development journey
-            </p>
-          </div>
+    <SectionWrapper id="blog_insights">
+      <SectionHeader
+        accent="Writing"
+        title="Blog & Insights"
+        subtitle="Sharing knowledge and experiences from my development journey"
+      />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Blog Post 1 */}
-            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://placehold.co/600x400?text=Modern+Web+Development"
-                  alt="Modern Web Development"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
-                    Development
-                  </span>
-                  <span className="text-neutral-400 text-sm">5 min read</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Modern Web Development Practices in 2024
-                </h3>
-                <p className="text-neutral-400 mb-4">
-                  Exploring the latest trends and best practices in modern web
-                  development, from performance optimization to user experience.
-                </p>
-                <a
-                  href="https://github.com/Amanhost"
-                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
-                >
-                  <span>Read More</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            {/* Blog Post 2 */}
-            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://placehold.co/600x400?text=Performance+Optimization"
-                  alt="Performance Optimization"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
-                    Performance
-                  </span>
-                  <span className="text-neutral-400 text-sm">8 min read</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  Advanced Performance Optimization Techniques
-                </h3>
-                <p className="text-neutral-400 mb-4">
-                  Deep dive into advanced techniques for optimizing web
-                  application performance and improving user experience.
-                </p>
-                <a
-                  href="https://github.com/Amanhost"
-                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
-                >
-                  <span>Read More</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-
-            {/* Blog Post 3 */}
-            <article className="group rounded-xl border border-neutral-800 section overflow-hidden hover:border-emerald-500/50 transition-all duration-300">
-              <div className="aspect-video w-full overflow-hidden">
-                <img
-                  src="https://placehold.co/600x400?text=AI+in+Development"
-                  alt="AI in Development"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 text-sm rounded-full border border-emerald-500/30 status-emerald">
-                    AI & ML
-                  </span>
-                  <span className="text-neutral-400 text-sm">6 min read</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-2">
-                  AI Integration in Modern Web Applications
-                </h3>
-                <p className="text-neutral-400 mb-4">
-                  Exploring how artificial intelligence is reshaping the
-                  landscape of web development and user interactions.
-                </p>
-                <a
-                  href="https://github.com/Amanhost"
-                  className="inline-flex items-center gap-2 status-emerald hover:text-emerald-400 transition-colors duration-300"
-                >
-                  <span>Read More</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    ></path>
-                  </svg>
-                </a>
-              </div>
-            </article>
-          </div>
-
-          {/* Newsletter Subscription */}
-          <div className="mt-16 p-8 rounded-xl border border-neutral-800 section">
-            <div className="max-w-2xl mx-auto text-center">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Subscribe to My Newsletter
-              </h3>
-              <p className="text-neutral-400 mb-6">
-                Get the latest insights and development tips directly in your
-                inbox
-              </p>
-              <form
-                onSubmit={handleSubscribe}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:outline-none focus:border-emerald-500"
-                  required
-                />
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className={`px-6 py-3 rounded-lg text-white transition-colors duration-300 ${
-                    loading
-                      ? "bg-gray-500 cursor-not-allowed"
-                      : "bg-emerald-500 hover:bg-emerald-600"
-                  }`}
-                >
-                  {loading ? "Subscribing..." : "Subscribe"}
-                </button>
-              </form>
-              {status && (
-                <p className="text-sm mt-4 text-neutral-300">{status}</p>
-              )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPosts.map((post, index) => (
+          <motion.article
+            key={index}
+            className="group rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/[0.06] overflow-hidden hover:border-emerald-500/30 transition-all duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            whileHover={{ y: -4 }}
+          >
+            <div className="aspect-video w-full overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
-          </div>
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="px-3 py-1 text-xs rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium">
+                  {post.tag}
+                </span>
+                <span className="text-neutral-500 text-xs">{post.readTime}</span>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2 font-montserrat group-hover:text-emerald-400 transition-colors">
+                {post.title}
+              </h3>
+              <p className="text-neutral-400 text-sm mb-4 line-clamp-2">
+                {post.description}
+              </p>
+              <a
+                href={post.link}
+                className="inline-flex items-center gap-2 text-emerald-400 text-sm hover:text-emerald-300 transition-colors"
+              >
+                <span>Read More</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </motion.article>
+        ))}
+      </div>
+
+      {/* Newsletter */}
+      <motion.div
+        className="mt-16 p-8 rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-white/[0.06]"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+      >
+        <div className="max-w-2xl mx-auto text-center">
+          <h3 className="text-2xl font-semibold text-white mb-3 font-montserrat">
+            Subscribe to My Newsletter
+          </h3>
+          <p className="text-neutral-400 text-sm mb-6">
+            Get the latest insights and development tips directly in your inbox
+          </p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 px-4 py-3 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white placeholder-neutral-500 focus:outline-none focus:border-emerald-500/50 transition-colors"
+              required
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className={`px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 ${
+                loading
+                  ? "bg-neutral-600 cursor-not-allowed"
+                  : "bg-gradient-to-r from-emerald-500 to-teal-500 hover:shadow-lg hover:shadow-emerald-500/25"
+              }`}
+            >
+              {loading ? "Subscribing..." : "Subscribe"}
+            </button>
+          </form>
+          {status && (
+            <p className="text-sm mt-4 text-neutral-300">{status}</p>
+          )}
         </div>
-      </section>
-    </div>
+      </motion.div>
+    </SectionWrapper>
   );
 };
 
