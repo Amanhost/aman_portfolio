@@ -13,7 +13,6 @@ import Type from "./Type";
 import SectionWrapper from "./ui/SectionWrapper";
 import SectionHeader from "./ui/SectionHeader";
 import GlassCard from "./ui/GlassCard";
-import AnimatedText from "./ui/AnimatedText";
 import Button from "./ui/Button";
 
 import { Col } from "react-bootstrap";
