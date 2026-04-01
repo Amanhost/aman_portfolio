@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -6,6 +7,10 @@ const quickReplies = [
   "What skills does he have?",
   "Show me his projects",
   "How to contact him?",
+  "Show resume",
+  "LinkedIn profile",
+  "Current company",
+  "How much experience does he have?",
 ];
 
 const responses = {
@@ -13,29 +18,83 @@ const responses = {
   skills: `Aman's core skills include:\n• Frontend: React.js, Next.js, Tailwind CSS, Vue.js\n• Backend: Node.js, Express, Python, Django\n• DevOps: Docker, AWS, CI/CD, GitHub Actions\n• Database: MongoDB, PostgreSQL, Redis`,
   projects: `Aman has built 25+ projects including NBFC banking software, backup service platforms, and responsive web applications. Check out the Projects section above for details!`,
   contact: `You can reach Aman at:\n📧 amanprakash1639@gmail.com\n📱 WhatsApp: +91 8739071486\n🔗 GitHub: github.com/Amanhost\n🔗 LinkedIn: linkedin.com/in/im-aman-prakash`,
-  default: `Thanks for your message! I'm Aman's AI assistant. I can help you learn about his skills, projects, and experience. Try asking about his work or how to get in touch!`,
+  resume: `You can view Aman's resume at /resume. It includes his experience, projects, skills, and career timeline in a dedicated layout.`,
+  linkedin: `Aman's LinkedIn profile is: linkedin.com/in/im-aman-prakash\nYou can use it to review his professional background, roles, and network.`,
+  currentCompany: `Aman is currently working as a Software Engineer at Uvation India Pvt Ltd. (Delhi) since January 2024. He has been leading platform work, RBAC, and backup service integrations there.`,
+  experience: `Aman has 3+ years of professional experience. His recent roles include:\n• Software Engineer at Uvation India Pvt Ltd.\n• Associate Software Engineer 3 at SYNORIQ R&D Pvt Ltd.\n• Software Developer Intern at SOFTPRO INDIA COMPUTER TECHNOLOGY Pvt Ltd.`,
+  greeting: `Hi! You can ask me about Aman's resume, LinkedIn, current company, experience, projects, skills, or contact details.`,
+  fallback: `I can help with Aman's resume, LinkedIn profile, current company, work experience, projects, skills, and contact details. Try asking something like “show resume”, “current company”, or “how much experience does he have?”.`,
 };
 
 const getResponse = (input) => {
   const lower = input.toLowerCase();
-  if (lower.includes("about") || lower.includes("aman") || lower.includes("who"))
+  if (lower.includes("hi") || lower.includes("hello") || lower.includes("hey"))
+    return responses.greeting;
+  if (
+    lower.includes("resume") ||
+    lower.includes("cv") ||
+    lower.includes("profile pdf")
+  )
+    return responses.resume;
+  if (
+    lower.includes("linkedin") ||
+    lower.includes("linked in") ||
+    lower.includes("professional profile")
+  )
+    return responses.linkedin;
+  if (
+    lower.includes("current company") ||
+    lower.includes("current organization") ||
+    lower.includes("where does he work") ||
+    lower.includes("where is he working") ||
+    lower.includes("company")
+  )
+    return responses.currentCompany;
+  if (
+    lower.includes("experience") ||
+    lower.includes("exp") ||
+    lower.includes("years") ||
+    lower.includes("career")
+  )
+    return responses.experience;
+  if (
+    lower.includes("about") ||
+    lower.includes("aman") ||
+    lower.includes("who")
+  )
     return responses.about;
-  if (lower.includes("skill") || lower.includes("tech") || lower.includes("stack"))
+  if (
+    lower.includes("skill") ||
+    lower.includes("tech") ||
+    lower.includes("stack")
+  )
     return responses.skills;
-  if (lower.includes("project") || lower.includes("work") || lower.includes("portfolio"))
+  if (
+    lower.includes("project") ||
+    lower.includes("work") ||
+    lower.includes("portfolio")
+  )
     return responses.projects;
-  if (lower.includes("contact") || lower.includes("email") || lower.includes("reach") || lower.includes("hire"))
+  if (
+    lower.includes("contact") ||
+    lower.includes("email") ||
+    lower.includes("reach") ||
+    lower.includes("hire") ||
+    lower.includes("phone") ||
+    lower.includes("whatsapp")
+  )
     return responses.contact;
-  return responses.default;
+  return responses.fallback;
 };
 
 const AIAssistant = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
+      id: "welcome-message",
       role: "assistant",
       content:
-        "Hi! I'm Aman's AI assistant. Ask me anything about his skills, projects, or experience!",
+        "Hi! I'm Aman's AI assistant. Ask me about his resume, LinkedIn, current company, projects, skills, or experience!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -49,15 +108,24 @@ const AIAssistant = () => {
   const handleSend = (text) => {
     const userMessage = text || input.trim();
     if (!userMessage) return;
+    const userId = `${Date.now()}-user`;
+    const assistantId = `${Date.now()}-assistant`;
 
-    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+    setMessages((prev) => [
+      ...prev,
+      { id: userId, role: "user", content: userMessage },
+    ]);
     setInput("");
     setIsTyping(true);
 
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: getResponse(userMessage) },
+        {
+          id: assistantId,
+          role: "assistant",
+          content: getResponse(userMessage),
+        },
       ]);
       setIsTyping(false);
     }, 800);
@@ -93,7 +161,12 @@ const AIAssistant = () => {
               exit={{ rotate: 90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </motion.svg>
           ) : (
             <motion.svg
@@ -107,7 +180,12 @@ const AIAssistant = () => {
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.2 }}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
             </motion.svg>
           )}
         </AnimatePresence>
@@ -134,8 +212,8 @@ const AIAssistant = () => {
                     AI Assistant
                   </p>
                   <p className="text-emerald-400 text-xs flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    Online
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Online</span>
                   </p>
                 </div>
               </div>
@@ -143,9 +221,9 @@ const AIAssistant = () => {
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-[250px] max-h-[320px]">
-              {messages.map((msg, i) => (
+              {messages.map((msg) => (
                 <motion.div
-                  key={i}
+                  key={msg.id}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -166,9 +244,18 @@ const AIAssistant = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="px-4 py-3 rounded-2xl bg-white/[0.05] border border-white/[0.06] rounded-bl-md flex gap-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce" style={{ animationDelay: "300ms" }} />
+                    <span
+                      className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce"
+                      style={{ animationDelay: "0ms" }}
+                    />
+                    <span
+                      className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce"
+                      style={{ animationDelay: "150ms" }}
+                    />
+                    <span
+                      className="w-2 h-2 rounded-full bg-emerald-400/60 animate-bounce"
+                      style={{ animationDelay: "300ms" }}
+                    />
                   </div>
                 </div>
               )}
@@ -207,8 +294,18 @@ const AIAssistant = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                    />
                   </svg>
                 </motion.button>
               </div>

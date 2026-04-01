@@ -6,14 +6,25 @@ import AIAssistant from "./component/AIAssistant";
 import "./style.css";
 
 const Resume = lazy(() => import("./component/Resume/Resume"));
-const WhatsAppButton = lazy(() => import("./component/ChatBoat/WhatsAppButton"));
+const WhatsAppButton = lazy(
+  () => import("./component/ChatBoat/WhatsAppButton"),
+);
 
 const PageLoader = () => (
   <div className="min-h-screen bg-brand-bg flex items-center justify-center">
     <div className="flex gap-2">
-      <span className="w-3 h-3 rounded-full bg-emerald-500 animate-bounce" style={{ animationDelay: "0ms" }} />
-      <span className="w-3 h-3 rounded-full bg-teal-500 animate-bounce" style={{ animationDelay: "150ms" }} />
-      <span className="w-3 h-3 rounded-full bg-cyan-500 animate-bounce" style={{ animationDelay: "300ms" }} />
+      <span
+        className="w-3 h-3 rounded-full bg-emerald-500 animate-bounce"
+        style={{ animationDelay: "0ms" }}
+      />
+      <span
+        className="w-3 h-3 rounded-full bg-teal-500 animate-bounce"
+        style={{ animationDelay: "150ms" }}
+      />
+      <span
+        className="w-3 h-3 rounded-full bg-cyan-500 animate-bounce"
+        style={{ animationDelay: "300ms" }}
+      />
     </div>
   </div>
 );
