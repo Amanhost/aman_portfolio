@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Nav from "./component/Nav";
 import AIAssistant from "./component/AIAssistant";
+import ScrollProgress from "./component/ui/effects/ScrollProgress";
+import ClickSpark from "./component/ui/effects/ClickSpark";
 import "./style.css";
 
 const Resume = lazy(() => import("./component/Resume/Resume"));
@@ -33,6 +35,9 @@ const App = () => {
   return (
     <Router>
       <div className="App">
+        <ScrollProgress />
+        <ClickSpark />
+
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Nav />} />

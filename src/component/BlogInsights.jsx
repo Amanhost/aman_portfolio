@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./ui/SectionWrapper";
 import SectionHeader from "./ui/SectionHeader";
-import GlassCard from "./ui/GlassCard";
 
 const blogPosts = [
   {

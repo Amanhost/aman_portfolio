@@ -18,7 +18,15 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--app-bg);
   color: var(--app-text);
-  overflow-x: hidden;
+  /* `clip` contains overflow without creating a scroll container,
+     which would otherwise break position: sticky in the project rail. */
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .section {
@@ -181,6 +189,160 @@ body {
 }
 
 /* --------- */
+/* Shiny text sweep */
+/* --------- */
+
+.shiny-text {
+  background: linear-gradient(
+    110deg,
+    rgba(226, 232, 240, 0.75) 35%,
+    #ffffff 50%,
+    rgba(226, 232, 240, 0.75) 65%
+  );
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shiny-sweep var(--shiny-duration, 4s) linear infinite;
+}
+
+.shiny-text--off {
+  animation: none;
+}
+
+@keyframes shiny-sweep {
+  0% { background-position: 180% 0; }
+  100% { background-position: -80% 0; }
+}
+
+/* --------- */
+/* Aurora background */
+/* --------- */
+
+.aurora-band {
+  position: absolute;
+  top: -35%;
+  left: -20%;
+  width: 140%;
+  height: 90%;
+  filter: blur(90px);
+  opacity: 0.28;
+  border-radius: 45%;
+  will-change: transform;
+}
+
+.aurora-band-1 {
+  background: linear-gradient(90deg, #10b981, #06b6d4, transparent);
+  animation: aurora-drift 24s ease-in-out infinite;
+}
+
+.aurora-band-2 {
+  background: linear-gradient(90deg, transparent, #14b8a6, #6366f1);
+  animation: aurora-drift 30s ease-in-out infinite reverse;
+  top: -15%;
+}
+
+.aurora-band-3 {
+  background: linear-gradient(90deg, #22d3ee, transparent, #10b981);
+  animation: aurora-drift 38s ease-in-out infinite;
+  top: 10%;
+  opacity: 0.18;
+}
+
+@keyframes aurora-drift {
+  0%, 100% { transform: translate3d(-6%, 0, 0) rotate(-2deg) scaleY(1); }
+  50% { transform: translate3d(6%, 4%, 0) rotate(2deg) scaleY(1.15); }
+}
+
+/* --------- */
+/* Star border */
+/* --------- */
+
+.star-border {
+  position: relative;
+  display: inline-flex;
+  padding: 1px;
+  border-radius: var(--star-radius, 9999px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.star-border__glow {
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #10b981 40deg,
+    #22d3ee 80deg,
+    transparent 140deg,
+    transparent 360deg
+  );
+  animation: star-spin var(--star-duration, 5s) linear infinite;
+  z-index: -1;
+}
+
+.star-border__inner {
+  display: inline-flex;
+  width: 100%;
+  border-radius: inherit;
+  background: #0b0f19;
+}
+
+@keyframes star-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --------- */
+/* Logo loop marquee */
+/* --------- */
+
+.logo-loop__track {
+  display: flex;
+  width: max-content;
+  animation: logo-scroll var(--loop-duration, 30s) linear infinite;
+  animation-direction: var(--loop-direction, normal);
+  will-change: transform;
+}
+
+.logo-loop__track--pausable:hover {
+  animation-play-state: paused;
+}
+
+.logo-loop__group {
+  display: flex;
+  align-items: center;
+}
+
+.logo-loop__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-loop--fade {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+
+@keyframes logo-scroll {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --------- */
 /* Custom cursor glow (desktop) */
 /* --------- */
 
@@ -195,5 +357,32 @@ body {
     z-index: 9999;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s;
+  }
+}
+
+/* --------- */
+/* Reduced motion */
+/* --------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .aurora-band,
+  .shiny-text,
+  .star-border__glow,
+  .logo-loop__track,
+  .orb {
+    animation: none !important;
+  }
+
+  .shiny-text {
+    -webkit-text-fill-color: currentColor;
   }
 }
