@@ -9,13 +9,22 @@ import GitHubActivity from "./GitHubActivity";
 import BlogInsights from "./BlogInsights";
 import ContactSection from "./ContactSection";
 import Footer from "./Footer";
-import Type from "./Type";
 import SectionWrapper from "./ui/SectionWrapper";
 import SectionHeader from "./ui/SectionHeader";
 import GlassCard from "./ui/GlassCard";
 import Button from "./ui/Button";
 
-import { Col } from "react-bootstrap";
+import DotGrid from "./ui/effects/DotGrid";
+import Aurora from "./ui/effects/Aurora";
+import SplitText from "./ui/effects/SplitText";
+import ShinyText from "./ui/effects/ShinyText";
+import RotatingText from "./ui/effects/RotatingText";
+import CountUp from "./ui/effects/CountUp";
+import TiltedCard from "./ui/effects/TiltedCard";
+import Magnet from "./ui/effects/Magnet";
+import StarBorder from "./ui/effects/StarBorder";
+import LogoLoop from "./ui/effects/LogoLoop";
+
 import { DiJavascript1, DiHtml5, DiCss3, DiDatabase } from "react-icons/di";
 import { FaJava, FaNode, FaReact } from "react-icons/fa";
 import { SiJavascript, SiRedux, SiSalesforce, SiVeeam } from "react-icons/si";
@@ -178,6 +187,10 @@ const Nav = () => {
         id="navbar_hero"
         className="relative min-h-screen pt-20 overflow-hidden gradient-bg"
       >
+        {/* Animated background layers */}
+        <Aurora />
+        <DotGrid gap={34} proximity={140} />
+
         {/* Floating orbs */}
         <div className="orb orb-emerald w-96 h-96 -top-48 -right-48 animate-float" />
         <div
@@ -197,8 +210,12 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Available for opportunities
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                  </span>
+                  <ShinyText>Available for opportunities</ShinyText>
                 </span>
               </motion.div>
 
@@ -208,16 +225,28 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.1 }}
               >
-                Hi, I'm{" "}
+                <SplitText text="Hi, I'm " by="chars" stagger={0.035} />
                 <span className="gradient-text glow-text">
-                  Aman Prakash{" "}
+                  <SplitText
+                    text="Aman Prakash"
+                    by="chars"
+                    stagger={0.035}
+                    delay={0.25}
+                  />{" "}
                   <span role="img" aria-label="wave">
                     👋🏻
                   </span>
                 </span>
                 <br />
                 <span className="text-emerald-400">
-                  <Type />
+                  <RotatingText
+                    texts={[
+                      "AI Software Engineer",
+                      "Frontend Engineer",
+                      "React Specialist",
+                      "Cloud-Native Builder",
+                    ]}
+                  />
                 </span>
               </motion.h1>
 
@@ -238,25 +267,35 @@ const Nav = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
               >
-                <Button href="#contact_connect" variant="primary">
-                  Get in Touch
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </Button>
-                <Button href="#featured_projects" variant="outline">
-                  View Projects
-                </Button>
+                <Magnet>
+                  <Button href="#contact_connect" variant="primary">
+                    Get in Touch
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </Button>
+                </Magnet>
+
+                <Magnet>
+                  <StarBorder>
+                    <a
+                      href="#featured_projects"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-medium text-emerald-400 hover:text-white transition-colors duration-300"
+                    >
+                      View Projects
+                    </a>
+                  </StarBorder>
+                </Magnet>
               </motion.div>
 
               {/* Quick stats */}
@@ -267,13 +306,13 @@ const Nav = () => {
                 transition={{ duration: 0.7, delay: 0.5 }}
               >
                 {[
-                  { value: "4+", label: "Years Exp." },
-                  { value: "25+", label: "Projects" },
-                  { value: "18+", label: "Clients" },
+                  { value: 4, suffix: "+", label: "Years Exp." },
+                  { value: 25, suffix: "+", label: "Projects" },
+                  { value: 18, suffix: "+", label: "Clients" },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
                     <div className="text-2xl font-bold gradient-text">
-                      {stat.value}
+                      <CountUp to={stat.value} suffix={stat.suffix} />
                     </div>
                     <div className="text-xs text-neutral-500 mt-1">
                       {stat.label}
@@ -289,15 +328,17 @@ const Nav = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="aspect-square rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/10 animate-pulse" />
-              <img
-                src="/aman-prakash-profile.png"
-                alt="Aman Prakash Frontend Developer from India"
-                className="absolute inset-0 w-full h-full object-cover rounded-full border-2 border-emerald-500/20"
-                loading="eager"
-              />
-              {/* Glow ring */}
-              <div className="absolute inset-0 rounded-full border border-emerald-500/10 animate-glow" />
+              <TiltedCard className="rounded-full" max={14}>
+                <div className="aspect-square rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/10 animate-pulse" />
+                <img
+                  src="/aman-prakash-profile.png"
+                  alt="Aman Prakash Frontend Developer from India"
+                  className="absolute inset-0 w-full h-full object-cover rounded-full border-2 border-emerald-500/20"
+                  loading="eager"
+                />
+                {/* Glow ring */}
+                <div className="absolute inset-0 rounded-full border border-emerald-500/10 animate-glow" />
+              </TiltedCard>
             </motion.div>
           </div>
         </div>
@@ -388,50 +429,27 @@ const Nav = () => {
           <p className="text-neutral-400 mb-8">
             Additional technologies I work with
           </p>
-          <div
-            className="flex flex-wrap justify-center gap-4"
-            style={{ color: "white" }}
-          >
-            <Col xs={4} md={2} className="tech-icons">
-              <DiJavascript1 />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <FaReact />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <SiRedux />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <SiVeeam />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <DiHtml5 />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <DiCss3 />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <FaNode />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <TbBrandNextjs />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <DiDatabase />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <SiSalesforce />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <TbBrandCarbon />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <FaJava />
-            </Col>
-            <Col xs={4} md={2} className="tech-icons">
-              <SiJavascript />
-            </Col>
-          </div>
+          <LogoLoop speed={38}>
+            {[
+              DiJavascript1,
+              FaReact,
+              SiRedux,
+              SiVeeam,
+              DiHtml5,
+              DiCss3,
+              FaNode,
+              TbBrandNextjs,
+              DiDatabase,
+              SiSalesforce,
+              TbBrandCarbon,
+              FaJava,
+              SiJavascript,
+            ].map((Icon, index) => (
+              <span key={index} className="tech-icons">
+                <Icon />
+              </span>
+            ))}
+          </LogoLoop>
         </motion.div>
       </SectionWrapper>
 
